@@ -1,6 +1,7 @@
 package claudia_burali;
 
 import claudia_burali.dao.EventsDAO;
+import claudia_burali.dao.LocationDAO;
 import claudia_burali.entities.Event;
 import claudia_burali.entities.TipoEvento;
 import com.github.javafaker.Faker;
@@ -36,8 +37,10 @@ public class Application {
             System.out.println(found);
         else System.out.println("Elemento non trovato");
 
-
         eventsDAO.delete(5);
+
+        LocationDAO locationDAO = new LocationDAO(em);
+        
 
         em.close();
         emf.close();
